@@ -55,4 +55,10 @@ tally(ballots, names_hash)
 tally(ballots, names_hash)
 tally(ballots, names_hash)
 puts names_hash
-puts names_hash.sort_by(&:last)
+results = names_hash.sort_by(&:last).reverse
+puts results.inspect
+place = 0
+results.each do |result|
+  place += 1
+  puts "#{result[0]} is in place #{place} with #{result[1]} points!"
+end
